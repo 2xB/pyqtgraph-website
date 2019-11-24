@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang=en>
+ <head>
+  <meta charset=utf-8>
+  <title>PyQtGraph: Scientific Visualization Library for Python</title>
+  <meta name="description" content="PyQtGraph is a graphics and user interface library for Python that provides functionality commonly required in engineering and science applications.">
+  <style>
+    body {
+      background-color:black;
+      color:#fcfcfc;
+    }
+
+    a:link {
+      color:lightgrey;
+      font-weight:bold;
+    }
+
+    a:visited {
+      color:grey;
+    }
+
+    div.header {
+      width:100%;
+      background-color:#2c2c2c;
+      padding:10px;
+      position:fixed;
+      top:0;
+      left:0;
+      border-bottom: 4px solid #d8d8d8;
+    }
+
+    div.header * {
+      color:#fcfcfc;
+      font-size:25px;
+      font-family:sans-serif;
+      padding: 15px;
+      vertical-align:middle;
+    }
+
+    div.header a {
+      font-size:20px;
+      text-decoration:none;
+    }
+
+    div.header a:hover {
+      background-color:#616161;
+    }
+
+    div.header img {
+      padding:0;
+    }
+
+    div.header > span {
+      float:right;
+      padding:0;
+      padding-right:20px;
+      height:100%;
+    }
+
+    div.header > span > * {
+      padding:10px 5px;
+    }
+
+    div.appetizer {
+      padding-top:60px;
+      border-bottom: 4px solid #d8d8d8;
+      background-color:black;
+      left:0;
+      width:100%;
+      padding-bottom:20px;
+    }
+
+    div.flex {
+      justify-content:center;
+      display:flex;
+      width:100%;
+    }
+
+    div.flex > a {
+      object-fit: cover;
+      height: 40vh;
+      width: 70vw;
+    }
+
+    div.flex > a > img {
+      object-fit: cover;
+      height: 40vh;
+    }
+
+    div.appetizer * {
+      font-family:sans-serif;
+      padding:10px;
+    }
+
+    h2 {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    h3 {
+      padding: 0px;
+      margin: 0px;
+      font-size:15px;
+      font-style: italic;
+    }
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  div.header {
+    position:unset;
+    padding-left:20px
+  }
+
+  div.header * {
+    padding: 0px;
+  }
+
+  div.header *:after {
+    content:"\a";
+    white-space: pre;
+  }
+
+  div.header > span {
+    display:none;
+  }
+
+  div.header a:hover {
+    background-color:unset;
+  }
+
+    div.appetizer {
+      padding-top:0;
+    }
+}
+  </style>
+ </head>
+ <body>
+  <div class="header">
+    <b>PyQtGraph</b>
+    <a href="#about">About</a>
+    <a href="#ressources">Ressources</a>
+    <a href="#news">News</a>
+    <a href="http://www.pyqtgraph.org/documentation/installation.html">▶ Download</a>
+    <span>
+     <a href="https://github.com/pyqtgraph/pyqtgraph/"><svg style="fill:white;padding:0;vertical-align:middle" height="32" viewBox="0 0 16 16" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+     <a href="https://pypi.org/project/pyqtgraph/"><img src="https://img.shields.io/pypi/v/pyqtgraph"></a>
+     <a href="https://github.com/pyqtgraph/pyqtgraph/commits/develop"><img src="https://img.shields.io/github/commits-since/pyqtgraph/pyqtgraph/pyqtgraph-0.10.0/develop"></a>
+    </span>
+  </div>
+  <div class=appetizer>
+    <div class="flex">
+      <a href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/plotting_sm.png"/></a>
+      <a href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/data_slicing_sm.png"/></a>
+      <a href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/pyqtgraph-3d_sm.png"/></a>
+      <a href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/flowchart_sm.png"/></a>
+    </div>
+    <b style="font-size:30px">Realtime Scientific Visualization.</b> <br/>
+    <span style="font-size:20px">A library for Python & Qt.</span>
+  </div>
+  <h1 id="about">About</h1>
+<p>PyQtGraph is intended for use in mathematics / scientific / engineering applications. Despite being written entirely in python, the library is fast due to its heavy leverage of numpy for number crunching, Qt's GraphicsView framework for 2D display, and OpenGL for 3D display.</p>
+
+<p>If that is what you need, head to our <a href="http://www.pyqtgraph.org/documentation/introduction.html">introduction</a>! It also includes a <a href="http://www.pyqtgraph.org/documentation/introduction.html#what-can-it-do">list of features</a> and a <a href="http://www.pyqtgraph.org/documentation/introduction.html#how-does-it-compare-to">comparison</a> to other plotting libraries.</p>
+
+<h1 id="ressources">Ressources</h1>
+
+<ul>
+  <li><a href="http://www.pyqtgraph.org/documentation/index.html">Docs/API</a></li>
+  <li><a href="https://groups.google.com/forum/?fromgroups#!forum/pyqtgraph">Support Forum</a></li>
+  <li><a href="https://github.com/pyqtgraph/pyqtgraph/issues">Issue Tracker</a></li>
+  <li><a href="https://github.com/pyqtgraph/pyqtgraph/">Source Code</a></li>
+  <li><a href="https://github.com/pyqtgraph/pyqtgraph/blob/develop/CONTRIBUTING.md">Contribute</a></li>
+</ul>
+
+  <h1 id="news">News</h1>
+  <h2>Release 0.11.0</h2>
+  <h3>12.12.2019</h3>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+
+Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+
+Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.
+
+Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis.
