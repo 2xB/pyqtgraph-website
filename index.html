@@ -104,6 +104,31 @@
       font-style: italic;
     }
 
+.img__wrap {
+  position: relative;
+  height: 200px;
+  width: 257px;
+}
+
+.img__description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(33, 33, 33, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media only screen and (max-width: 600px) {
   /* For mobile phones: */
   div.header {
@@ -149,10 +174,11 @@
   </div>
   <div class=appetizer>
     <div class="flex">
-      <a href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/plotting_sm.png"/></a>
-      <a href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/data_slicing_sm.png"/></a>
-      <a href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/pyqtgraph-3d_sm.png"/></a>
-      <a href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/flowchart_sm.png"/></a>
+      <a class="img__wrap" href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/plotting_sm.png"/><p class="img__description">A variety of plotting capabilities. (taken from examples/Plotting.py) </p></a>
+      <a class="img__wrap" href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/data_slicing_sm.png"/><p class="img__description">Image analysis with automated data slicing.</p></a>
+      <a class="img__wrap" href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/pyqtgraph-3d_sm.png"/><p class="img__description">3D graphics: volumetric rendering, surface plots, scatter plots, and isosurfaces.</p></a>
+      <a class="img__wrap" href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/screenshot3_sm.png"/><p class="img__description">A variety of ROI types. Each ROI selects data from the underlying image and redisplays it below. (taken from examples/test_ROItypes.py)</p></a>
+      <a class="img__wrap" href="http://www.pyqtgraph.org/documentation/introduction.html#examples"><img src="images/flowchart_sm.png"/><p class="img__description">Programmable flowcharts for fast prototyping.</p></a>
     </div>
     <b style="font-size:30px">Realtime Scientific Visualization.</b> <br/>
     <span style="font-size:20px">A library for Python & Qt.</span>
